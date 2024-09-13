@@ -170,9 +170,9 @@ CD into the parent directory of all of the files, for example, in this lab that 
 In here, run the following command:
 ```
 podman run --rm -it --privileged -v $(pwd):/eib registry.opensuse.org/isv/suse/edge/edgeimagebuilder/containerfile-sp6/suse/edge-image-builder:1.1.0.rc2  build --definition-file  definition.yaml`
+```
 
-
-The output shouw look like:
+The output should look like:
 ```
 Pulling selected Helm charts... 100% |█████████████████████████████████████████████████████████████████████████████| (2/2, 1 it/s)        
 Generating image customization components...
@@ -209,3 +209,33 @@ We now have the built image `lab1.iso`.
 
 For this lab, we will be deploying 2 virtual machines using the same ISO on UTM.
 
+Begin by opening UTM and selecting `Create a New Virtual Machine`
+
+![image info](./images/utm-menu.png)
+
+
+Select `virtualize`
+![image info](./images/utm-menu1.png)
+
+Select `other`
+![image info](./images/utm-menu2.png)
+
+Select `CD/DVD Image` then click `browse` and select your lab 1 ISO file`.
+![image info](./images/utm-menu3.png)
+
+Set at least `3GB` ram and `3` CPU Cores.
+![image info](./images/utm-menu4.png)
+
+Set the storage to `10GiB`
+![image info](./images/utm-menu5.png)
+
+Continue and then select `Open VM Settings` and then save. You can also set the name of the VM if you'd like.
+![image info](./images/utm-menu6.png)
+
+
+Go to `Network` Select `Shared-Network` and set the `MAC Address` to the one found in `node1.suse.com.yaml`
+![image info](./images/utm-menu7.png)
+
+Then start the VM
+
+Create a second VM repeating all of the previous instructions but using the `Mac Address` from `node2.suse.com.yaml`.
