@@ -1,0 +1,3 @@
+ollama:
+  enabled: false
+ollamaUrls: ['http://ollama:11434']

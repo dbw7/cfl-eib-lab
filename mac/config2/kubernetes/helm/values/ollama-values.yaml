@@ -1,0 +1,3 @@
+ollama:
+  models:
+    - tinyllama:latest
